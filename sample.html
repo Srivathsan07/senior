@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .ui-slider {
+    background: green;
+}
+.ui-slider-range {
+    background: yellow;
+}
+#YourDiv {
+    float: right;
+    height: 100%;
+    background: red;
+    border-radius: 0 4px 4px 0;
+}
+        </style>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="col-xs-12">
+                <p>
+                    <label for="amount">Price range:</label>
+                    <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
+                </p>
+                <div id="slider-range"></div>
+            </div>
+        </div>
+        <!--<script src="js/jquery.min.js"></script>-->
+         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+       $(function () {
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 100,
+        values: [25, 50],
+        slide: function (event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            console.log(ui.values[1] +'%');
+            $('#YourDiv').css('width', 100 - ui.values[1] +'%');
+        }
+    }).append('<div id="YourDiv" style="width: 50%"></div>');
+    
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+        " - $" + $("#slider-range").slider("values", 1));
+});
+
+            });
+        </script>
+    </body>
+</html>

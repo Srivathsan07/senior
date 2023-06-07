@@ -1,0 +1,56 @@
+
+<html>
+<head>
+	<style>
+	table #applytable tr td{
+		width:150px ;
+		word-break: break-all;
+			}
+.removebtn{
+	padding-left: 20px;
+}
+</style>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+   <script>
+
+  
+   function addRow(){
+        var test ='<tr><td>A</td> <td>B</td><td>C</td><td>D</td><td>E</td><td width="50" style= width:50px;><i onclick="addRow()" class="fa fa-plus-circle addbtn"></i><i onclick="removerow(event)" class="fa fa-minus-circle removebtn"></i></td></tr>';
+        $("#applyTable").append(test);
+
+        }
+
+
+        function removerow(event) {
+      var td = event.target.parentNode; 
+      var tr = td.parentNode; 
+      tr.parentNode.removeChild(tr);
+     
+}
+
+      </script>
+</head>
+<div>
+<table width="800"class="myTable" border="1" align="center" >
+ <tbody id="applyTable"> 
+   <tr>
+    
+    <td>A</td> 
+    <td>B</td>
+    <td>C</td>
+    <td>D</td>
+    <td>E</td>
+    <td width="50" style="width: 50px"><i onclick="addRow()"class="fa fa-plus-circle addbtn"></i></td>
+    
+  </tr>
+ </tbody>
+</table>
+</div>
+<div > 
+
+</div>
+<body>
+</body>
+</html>

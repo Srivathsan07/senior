@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main_back{
+            background: url("./images/LED Video Wall Application Image_Campus.jpeg");
+            width: 100%;
+            height: 300px;
+        }
+        .width_30{
+            width: 33.33%;
+        }
+        .main_back:hover .text_main{
+            display: block; 
+        }
+        .text_inner h1{
+            animation-name: text_top;    
+            animation-duration: 3s;  
+            animation-fill-mode: forwards;
+            position: relative;                        
+        }
+        .text_main{
+            display: none;
+            height: 100%;
+        }
+        .text_inner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #ff00003d;
+        }
+        .text_main h1{
+            margin: 0px;
+        }
+        @keyframes text_top{
+            0%{top: -100px;opacity: 0.3;}
+            50%{opacity: 0.6;}
+            100%{top: 0px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="width_30">
+            <div class="main_back">
+                <div class="text_main">
+                    <div class="text_inner">
+                        <h1>ijioji</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
